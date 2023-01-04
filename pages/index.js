@@ -17,8 +17,12 @@ export default function Home() {
 
 
       <h1 className="text-3xl font-bold underline">
-      Hello world!
+      Home page
     </h1>
+
+    <button>
+      buy your favorite pokemons
+    </button>
      
     </div>
     </>

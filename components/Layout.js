@@ -5,7 +5,10 @@ const Layout = ({children}) => {
   return (
     <div>
         <Navbar/>
-      {children}
+        <div className='px-[8rem] py-[5rem]'>
+        {children}
+
+        </div>
     </div>
   )
 }
