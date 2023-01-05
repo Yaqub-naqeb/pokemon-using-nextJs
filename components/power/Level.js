@@ -25,7 +25,7 @@ const Level = ({power}) => {
 {/* level of power */}
 
 <div className="w-[100%] bg-gray-200 rounded-full shadow-md">
-  <div className={` text-xs font-medium text-blue-100 text-center h-3 leading-none rounded-md  ${power.value < 60 ? 'bg-red-600' : 'bg-green-600'} `} style={{ width: `${power.value}%`}}> {power.value>100?'100':power.value}%</div>
+  <div className={` text-xs font-medium text-blue-100 text-center h-3 leading-none rounded-md  ${power.value < 60 ? 'bg-red-600' : 'bg-green-600'} `} style={{ width: `${power.value>100?'100':power.value}%`}}> {power.value>100?'100':power.value}%</div>
 </div>
 
     </li>

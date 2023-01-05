@@ -38,9 +38,8 @@ import Image from 'next/image'
 import React from 'react'
 import Level from '../../components/power/Level'
 const PokInfo = ({pk}) => {
-  console.log(pk);
   return (
-    <div className='text-center flex flex-col items-center gap-[5rem]'>
+    <div className='text-center flex flex-col items-center gap-[5rem] '>
     
    
 <div className='text-center  prose lg:prose-xl items-center'>
@@ -49,7 +48,7 @@ const PokInfo = ({pk}) => {
 </div>
     
  
-    <div className='flex   justify-between gap-[25rem] '>
+    <div className='flex lg:flex-row md:flex-row  flex-col-reverse  justify-between lg:gap-[25rem] md:gap-[20rem]  gap-[5rem] '>
 {/* propeties */}
 
 <ol>
@@ -59,7 +58,7 @@ const PokInfo = ({pk}) => {
 
     {/* image */}
     <div>
-<Image className='lg:h-[22rem]  lg:w-[22rem]' alt={pk.name}  src={'https://jherr-pokemon.s3.us-west-1.amazonaws.com/'+pk.image}  width={200} height={200}
+<Image className='lg:h-[22rem]  lg:w-[22rem]  hover:scale-110 duration-150 ease-in-out' alt={pk.name}  src={'https://jherr-pokemon.s3.us-west-1.amazonaws.com/'+pk.image}  width={200} height={200}
     />
 </div>
 
