@@ -58,7 +58,7 @@ const PokInfo = ({pk}) => {
 
     {/* image */}
     <div>
-<Image className='lg:h-[22rem]  lg:w-[22rem]  hover:scale-110 duration-150 ease-in-out' alt={pk.name}  src={'https://jherr-pokemon.s3.us-west-1.amazonaws.com/'+pk.image}  width={200} height={200}
+<Image className='lg:h-[22rem]  lg:w-[22rem]   hover:scale-110 duration-150 ease-in-out' alt={pk.name}  src={'https://jherr-pokemon.s3.us-west-1.amazonaws.com/'+pk.image}  width={200} height={200}
     />
 </div>
 
