@@ -14,40 +14,47 @@ export const getStaticProps=async()=>{
 
 
 import Image from 'next/image'
-import Pagination from "react-pagination-library";
-import React from 'react'
+import Pagenate from '../../components/paginate/Pagenate'
+import React, { useState } from 'react'
 import Card from '../../components/card/Card'
-const index = ({pokemons}) => {
-    console.log(pokemons);
+const Index = ({pokemons}) => {
+  
+  const [currentPage,setCurrentPage]=useState(1);
+  const [postsPerPage,setPostsPerPage]=useState(9);
+
+// kota zhmaray pokemon law pagada
+const lastPostIndex=currentPage*postsPerPage;
+// yakam zhmaray pokemon law pagada
+const firstPostIndex=lastPostIndex-postsPerPage;
+// currentPosts it contain only 10 pokemont of current page
+const currentPosts=pokemons.slice(firstPostIndex,lastPostIndex);
+// number of pages
+const NumOfPage=Math.ceil(pokemons.length/postsPerPage);
+
+
+
+    const changeCurrentPage=num=>{
+      setCurrentPage(num);
+    } 
+
+
+
   return (
 
-    <>
-    <div className='grid lg:grid-cols-4 
-    md:grid-cols-3
-    grid-cols-2
-
-    place-items-center 
-    
-    ' >
-      {pokemons.map(pokemon=><Card key={pokemon.id} pokemon={pokemon}/>)}
+    <div className=''>
+    {/* Card of pokemons */}
+    <div className='grid lg:grid-cols-4  md:grid-cols-3 grid-cols-2 place-items-center' >
+{currentPosts?.map(pokemon=><Card key={pokemon.id} pokemon={pokemon} />)}
     </div>
 
 {/* pagination */}
-{/* npm install react-pagination-library */}
-
 <div>
-<Pagination
-          currentPage={this.state.currentPage}
-          totalPages={10}
-          changeCurrentPage={this.changeCurrentPage}
-          theme="bottom-border"
-        />
-        <h2>current Page:{this.state.currentPage}</h2>
+<Pagenate currentPage={currentPage} changeCurrentPage={changeCurrentPage} NumOfPage={NumOfPage}/>
 </div>
 
 
-    </>
+    </div>
   )
 }
 
-export default index
+export default Index
