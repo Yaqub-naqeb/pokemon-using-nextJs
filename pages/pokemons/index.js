@@ -41,9 +41,9 @@ const NumOfPage=Math.ceil(pokemons.length/postsPerPage);
 
   return (
 
-    <div className=''>
+    <div className='flex flex-col  items-center'>
     {/* Card of pokemons */}
-    <div className='grid lg:grid-cols-4  md:grid-cols-3 grid-cols-2 place-items-center' >
+    <div className='grid lg:grid-cols-4  md:grid-cols-3 grid-cols-2 place-items-center gap-x-[8rem] gap-y-[4rem]' >
 {currentPosts?.map(pokemon=><Card key={pokemon.id} pokemon={pokemon} />)}
     </div>
 

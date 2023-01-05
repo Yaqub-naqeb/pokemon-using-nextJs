@@ -3,11 +3,11 @@ import React from 'react'
 
 const Card = ({pokemon}) => {
   return (
-    <div  key={pokemon.id}>
+    <div   className={'flex flex-col items-center gap-5'}>
 
-    <Image alt={pokemon.name}  src={'https://jherr-pokemon.s3.us-west-1.amazonaws.com/'+pokemon.image}  width={200} height={200}
+    <Image className='h-[15rem] w-[14rem]' alt={pokemon.name}  src={'https://jherr-pokemon.s3.us-west-1.amazonaws.com/'+pokemon.image}  width={200} height={500}
     />
-    <p>{pokemon.name}</p>
+    <p className='text-xl '>{pokemon.name}</p>
     
     
           </div>

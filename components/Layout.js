@@ -5,7 +5,7 @@ const Layout = ({children}) => {
   return (
     <div>
         <Navbar/>
-        <div className='px-[8rem] py-[5rem]'>
+        <div className='lg:px-[7rem] md:px-[6rem] px-[5rem] py-[5rem]'>
         {children}
 
         </div>
