@@ -13,7 +13,7 @@ export const getStaticProps=async()=>{
 
 
 
-import Image from 'next/image'
+
 import Pagenate from '../../components/paginate/Pagenate'
 import React, { useState } from 'react'
 import Card from '../../components/card/Card'
