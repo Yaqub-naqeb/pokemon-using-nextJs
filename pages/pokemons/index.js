@@ -14,10 +14,14 @@ export const getStaticProps=async()=>{
 
 
 import Image from 'next/image'
+import Pagination from "react-pagination-library";
 import React from 'react'
+import Card from '../../components/card/Card'
 const index = ({pokemons}) => {
     console.log(pokemons);
   return (
+
+    <>
     <div className='grid lg:grid-cols-4 
     md:grid-cols-3
     grid-cols-2
@@ -25,17 +29,24 @@ const index = ({pokemons}) => {
     place-items-center 
     
     ' >
-
-
-      {pokemons.map(pokemon=><div  key={pokemon.id}>
-
-<Image alt={pokemon.name}  src={'https://jherr-pokemon.s3.us-west-1.amazonaws.com/'+pokemon.image}  width={200} height={200}
-/>
-<p>{pokemon.name}</p>
-
-
-      </div>)}
+      {pokemons.map(pokemon=><Card key={pokemon.id} pokemon={pokemon}/>)}
     </div>
+
+{/* pagination */}
+{/* npm install react-pagination-library */}
+
+<div>
+<Pagination
+          currentPage={this.state.currentPage}
+          totalPages={10}
+          changeCurrentPage={this.changeCurrentPage}
+          theme="bottom-border"
+        />
+        <h2>current Page:{this.state.currentPage}</h2>
+</div>
+
+
+    </>
   )
 }
 
