@@ -7,6 +7,7 @@ const Navbar = () => {
 
   return (
     <div>
+      {/* Navbar */}
     <Head>
       <meta
         name="description"
