@@ -67,22 +67,22 @@ const Navbar = () => {
             }`}
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 align-middle lg:mx-0 md:mx-0 mx-[10rem] ">
-              <li className="text-white">
+              <li className="text-white hover:scale-110 duration-200 transition-all ease-in-out">
                 <Link href="/">
                  Home
                 </Link>
               </li>
-              <li className="text-white">
+              <li className="text-white hover:scale-110 duration-200 transition-all ease-in-out">
                 <Link href="/pokemons">
                  Pokemons
                 </Link>
               </li>
-              <li className="text-white">
+              <li className="text-white hover:scale-110 duration-200 transition-all ease-in-out">
                 <Link href="/about">
                   About
                 </Link>
               </li>
-              <li className="text-white">
+              <li className="text-white hover:scale-110 duration-200 transition-all ease-in-out">
                 <Link href="/contact">
                  Contact
                 </Link>

@@ -10,14 +10,11 @@ export const getStaticProps=async()=>{
 
 
 }
-
-
-
+// 
 
 import Pagenate from '../../components/paginate/Pagenate'
 import React, { useState } from 'react'
 import Card from '../../components/card/Card'
-import NotFound from '../../components/card/NotFound'
 import Searchbar from '../../components/searchbar/Searchbar'
 const Index = ({pokemons}) => {
   

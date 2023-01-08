@@ -9,7 +9,7 @@ const Level = ({power}) => {
 
 
     <div>
-
+{/* level page  its just the precentage of power */}
 
 
     <li className='list-decimal  grid grid-cols-2 place-items-start justify-between gap-x-1 align-middle py-5 gap-y-3 '>
