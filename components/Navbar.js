@@ -78,13 +78,13 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="text-white hover:scale-110 duration-200 transition-all ease-in-out">
-                <Link href="/about">
-                  About
+                <Link href="/form/LogIn">
+                  LogIn
                 </Link>
               </li>
               <li className="text-white hover:scale-110 duration-200 transition-all ease-in-out">
-                <Link href="/contact">
-                 Contact
+                <Link href="/form/SignUp">
+                 SignUp
                 </Link>
               </li>
             </ul>

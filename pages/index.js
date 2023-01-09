@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import Link from 'next/link'
+import Button from '../components/Button'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -29,9 +30,7 @@ export default function Home() {
 
 
     <Link href={'/pokemons'}>
-    <button className='bg-transparent hover:bg-[#1F2937] text-[#1F2937] font-semibold hover:text-white py-2 px-4 border border-[#1F2937] mt-[3rem] hover:border-transparent rounded duration-500 ease-in-out transition-all'>
-     Shop Now
-    </button>
+    <Button name={'Shop Now'}/>
     </Link></div>
 {/* image */}
 
