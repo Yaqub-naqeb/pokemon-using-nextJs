@@ -2,11 +2,13 @@ import { Inter } from '@next/font/google';
 import React, { useEffect, useState } from 'react'
 import Button from '../../components/Button';
 import { auth } from '../firebase'
-import {signInWithPopup,GoogleAuthProvider} from 'firebase/auth'
+import {getAuth, createUserWithEmailAndPassword,signInWithPopup,GoogleAuthProvider,FacebookAuthProvider,signInWithRedirect, getRedirectResult} from 'firebase/auth'
 import {useAuthState} from 'react-firebase-hooks/auth'
 import { useRouter } from 'next/router';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import NotFound from '../404';
+
+import { AiFillGoogleCircle,AiFillFacebook } from "react-icons/ai";
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -60,10 +62,32 @@ const googleAuth=new GoogleAuthProvider();
 const login=async()=>{
   const result=await signInWithPopup(auth,googleAuth);
   router.push('/');
-
 }
 
+// facebook
+const signInWithFaceBook=()=>{
+  const provider = new FacebookAuthProvider();
 
+  signInWithPopup(auth, provider)
+
+  .then((result) => {
+    const user = result.user;
+
+    const credential = FacebookAuthProvider.credentialFromResult(result);
+    const accessToken = credential.accessToken;
+
+  })
+  .catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = FacebookAuthProvider.credentialFromError(error);
+
+  });
+}
 
   return (
 
@@ -131,12 +155,15 @@ type="password" placeholder='Confirm Password' onChange={e=>setConfirmPassword(e
 
 <div className='h-[.01rem] bg-black w-[17rem] md:w-[18rem] lg:w-[20rem]'></div>
 
-<p>or</p>
-<button onClick={login}>Login with Google</button>
-{/* <button onClick={login2}>Login with facebook</button> */}
+<p className='text-center'>or 
+  <br />
+  login with
+</p>
 
-
-
+<div className=' flex gap-3'>
+<button onClick={login} className='text-[2rem]'><AiFillGoogleCircle/></button>
+<button className='text-[2rem]' onClick={signInWithFaceBook}><AiFillFacebook/></button>
+</div>
 
 </div>
 

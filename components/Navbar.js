@@ -78,7 +78,7 @@ const clickHandler=()=>{
               navbar ? 'block' : 'hidden'
             }`}
           >
-            <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 align-middle lg:mx-0 md:mx-0 mx-[10rem] ">
+            <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 align-middle">
               <li className="text-white hover:scale-110 duration-200 transition-all ease-in-out">
                 <Link href="/">
                  Home
