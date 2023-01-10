@@ -4,11 +4,13 @@ import Button from '../../components/Button';
 import { auth } from '../firebase'
 import {signInWithPopup,GoogleAuthProvider} from 'firebase/auth'
 import {useAuthState} from 'react-firebase-hooks/auth'
+import { useRouter } from 'next/router';
 
 const inter = Inter({ subsets: ['latin'] })
 
-
 const SignUp = () => {
+  const router=useRouter();
+
 const [firstName,setFirstName]=useState('');
 const [lastName,setLastName]=useState('');
 const [email,setEmail]=useState('');
@@ -31,6 +33,7 @@ setConfirmPassword('')
 
 
 
+
   const [user,setUser]=useAuthState(auth);
 
   useEffect(()=>{
@@ -40,6 +43,7 @@ setConfirmPassword('')
 const googleAuth=new GoogleAuthProvider();
 const login=async()=>{
   const result=await signInWithPopup(auth,googleAuth);
+  router.push('/');
 
 }
 

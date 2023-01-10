@@ -1,9 +1,21 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 import Head from 'next/head';
-
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../pages/firebase';
+import { useRouter } from 'next/router';
 const Navbar = () => {
+  const router=useRouter();
+  const [user,setUser]=useAuthState(auth);
     const [navbar, setNavbar] = useState(false);
+
+
+const clickHandler=()=>{
+  router.push('/')
+  auth.signOut()
+ 
+}
+
 
   return (
     <div>
@@ -77,7 +89,10 @@ const Navbar = () => {
                  Pokemons
                 </Link>
               </li>
-              <li className="text-white hover:scale-110 duration-200 transition-all ease-in-out">
+
+              {user ? <li onClick={clickHandler} className="text-white hover:scale-110 duration-200 cursor-pointer transition-all ease-in-out">
+               LogOut
+              </li>: <><li className="text-white hover:scale-110 duration-200 transition-all ease-in-out">
                 <Link href="/form/LogIn">
                   LogIn
                 </Link>
@@ -86,7 +101,8 @@ const Navbar = () => {
                 <Link href="/form/SignUp">
                  SignUp
                 </Link>
-              </li>
+              </li></>}
+              
             </ul>
           </div>
         </div>
