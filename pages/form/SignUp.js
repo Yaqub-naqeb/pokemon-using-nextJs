@@ -5,7 +5,7 @@ import {getAuth, createUserWithEmailAndPassword,signInWithPopup,GoogleAuthProvid
 import {useAuthState} from 'react-firebase-hooks/auth'
 import { useRouter } from 'next/router';
 import NotFound from '../404';
-// import { AiFillGoogleCircle,AiFillFacebook } from "react-icons/ai";
+import { AiFillGoogleCircle,AiFillFacebook } from "react-icons/ai";
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -158,10 +158,10 @@ type="password" placeholder='Confirm Password' onChange={e=>setConfirmPassword(e
   login with
 </p>
 
- {/* <div className=' flex gap-3'>
+ <div className=' flex gap-3'>
 <button onClick={login} className='text-[2rem]'><AiFillGoogleCircle/></button>
 <button className='text-[2rem]' onClick={signInWithFaceBook}><AiFillFacebook/></button>
-</div> */}
+</div>
 
 </div> 
 
