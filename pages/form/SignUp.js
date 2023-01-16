@@ -20,13 +20,14 @@ const [email,setEmail]=useState('');
 const [password,setPassword]=useState('');
 const [confirmPassword,setConfirmPassword]=useState('');
 
+const [displayName,setDisplayName]=useState('')
 
 
 const submitHandler=(e)=>{
   e.preventDefault();
 
-
-  createUserWithEmailAndPassword(auth, email, password,firstName)
+setDisplayName(firstName +' '+ lastName)
+  createUserWithEmailAndPassword(auth, email,displayName)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
@@ -40,7 +41,7 @@ const submitHandler=(e)=>{
     // ..
   });
   router.push('/')
-  
+  setDisplayName('')
 setFirstName('')
 setLastName('')
 setEmail('')
@@ -168,7 +169,7 @@ type="password" placeholder='Confirm Password' onChange={e=>setConfirmPassword(e
 
 
 {/* <button type='submit'>Submit</button> */}
-<Button  name={'Submit'}/>
+<Button  name={'Submit'} />
 
 </form>
 
