@@ -8,6 +8,7 @@ const Navbar = () => {
   const router=useRouter();
   const [user,setUser]=useAuthState(auth);
     const [navbar, setNavbar] = useState(false);
+console.log(user);
 
 
 const clickHandler=()=>{
@@ -90,9 +91,25 @@ const clickHandler=()=>{
                 </Link>
               </li>
 
-              {user ? <li onClick={clickHandler} className="text-white hover:scale-110 duration-200 cursor-pointer transition-all ease-in-out">
+              {user ? <>
+                <li onClick={clickHandler} className="text-white hover:scale-110 duration-200 cursor-pointer transition-all ease-in-out">
                LogOut
-              </li>: <><li className="text-white hover:scale-110 duration-200 transition-all ease-in-out">
+              </li>
+
+                <li className="text-white hover:scale-110 duration-200 lg:translate-x-[8rem] md:translate-x-5 cursor-pointer transition-all ease-in-out flex gap-2 align-middle justify-center items-center">
+
+             <span className='text-lg font-bold'>{user.displayName
+}</span>
+
+<span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 font-bold">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+</svg></span>
+
+
+              </li>
+             
+              
+              </>: <><li className="text-white hover:scale-110 duration-200 transition-all ease-in-out">
                 <Link href="/form/LogIn">
                   LogIn
                 </Link>
