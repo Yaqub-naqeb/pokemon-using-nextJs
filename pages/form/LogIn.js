@@ -8,7 +8,7 @@ import Button from '../../components/Button'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from 'next/router'
 import NotFound from '../404'
-
+// login
 const LogIn = () => {
 
 const router=useRouter();

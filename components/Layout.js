@@ -6,6 +6,7 @@ const Layout = ({children}) => {
     <div>
       {/* layout */}
         <Navbar/>
+        {/* root  */}
         <div className='lg:px-[7rem] md:px-[6rem] px-[5rem] py-[5rem]'>
         {children}
 

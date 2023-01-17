@@ -10,7 +10,7 @@ const Navbar = () => {
     const [navbar, setNavbar] = useState(false);
 console.log(user);
 
-
+// click handler function
 const clickHandler=()=>{
   router.push('/')
   auth.signOut()

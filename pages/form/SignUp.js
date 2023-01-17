@@ -9,7 +9,7 @@ import { AiFillGoogleCircle,AiFillFacebook } from "react-icons/ai";
 
 
 const inter = Inter({ subsets: ['latin'] })
-
+// signUp
 const SignUp = () => {
 
 const auth = getAuth();
