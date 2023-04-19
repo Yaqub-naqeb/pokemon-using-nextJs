@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'] })
 // signUp
 const SignUp = () => {
 
-const auth = getAuth();
+// const auth = getAuth();
 const router=useRouter();
 const [firstName,setFirstName]=useState('');
 const [lastName,setLastName]=useState('');
@@ -49,6 +49,8 @@ setPassword('')
 setConfirmPassword('')
 }
 // 
+
+
 
   const [user,setUser]=useAuthState(auth);
 
